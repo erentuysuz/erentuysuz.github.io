@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sami eren tüysüz-portfolyom</title>
+    <link rel="stylesheet" href="gorsellik.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="samierentuysuz">
+                <a href="anasayfa.html">Sami Eren TÜYSÜZ</a> <!-- Ana sayfaya dönmek için bağlantı -->
+            </div>
+            <ul>
+                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="hakkimda.html">Hakkımızda</a></li>
+                <li><a href="projects.html">Projelerim</a></li>
+            </ul>
+        </div>
+        
+        <div id="ilk_projem"></div>
+        <div id="son_projem"> </div>
+        <div id="en_begenilen"></div>
+        <div class="projeCenter">
+            <h1 style="color: black;">Projelerim</h1>
+            
+            <!-- Resmi göstereceğimiz img öğesi -->
+            <img id="projectImage" src="fotograf/projelerim1.png" width="500" alt="İlk Projem" title="İlk Projem">
+
+            <br><br>
+
+            <div class="butonlar">
+            <button onclick="changeProjectImage(0)">İlk Projem</button>
+            <button onclick="changeProjectImage(1)">Son Projem</button>
+            <button onclick="changeProjectImage(2)">En Beğenilen</button>
+            </div>
+        </div>
+
+        <script>
+            // Resimlerin dosya yolları
+            var imgSrc = [
+                "fotograf/projelerim1.png", // İlk Proje Resmi
+                "fotograf/projelerim2.png", // Son Proje Resmi
+                "fotograf/enBegenilen.png" // En Beğenilen Proje Resmi
+            ];
+
+            function changeProjectImage(index) {
+                // img elementini seçiyoruz
+                var imgElement = document.getElementById("projectImage");
+
+                // Resim kaynağını ve diğer bilgileri güncelliyoruz
+                imgElement.src = imgSrc[index];
+
+                // Alt ve title metinlerini isteğe göre güncelleyin
+                if (index === 0) {
+                    imgElement.alt = "İlk Projem";
+                    imgElement.title = "İlk Projem";
+                    document.getElementById("ilk_projem").innerHTML = "snake oyunu!";
+                } else if (index === 1) {
+                    imgElement.alt = "Son Projem";
+                    imgElement.title = "Son Projem";
+                    document.getElementById("son_projem").innerHTML = "basit web sayfası!";
+                } else if (index === 2) {
+                    imgElement.alt = "En Beğenilen Projem";
+                    imgElement.title = "En Beğenilen Projem";
+                    document.getElementById("en_begenilen").innerHTML = "mayın tarlası!";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
